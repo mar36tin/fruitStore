@@ -9,7 +9,7 @@ import play.api.mvc._
 import play.api.test._
 import play.api.test.Helpers._
 
-class FruitShopControllerSpec extends PlaySpec with Results {
+class FruitStoreControllerSpec extends PlaySpec with Results {
 
   class TestController() extends Controller with FruitStoreController
 
@@ -28,6 +28,13 @@ class FruitShopControllerSpec extends PlaySpec with Results {
       val result: Future[Result] = controller.addFruit().apply(FakeRequest())
       val bodyText: String = contentAsString(result)
       status(result) mustBe (SEE_OTHER)
+    }
+
+    "should calculate the offers correctly" in {
+      val controller = new TestController()
+      val result: Future[Result] = controller.addFruit().apply(FakeRequest().withFormUrlEncodedBody(("apples", "5"),("oranges","6")))
+      val bodyText: String = contentAsString(result)
+      redirectLocation(result) must contain("/checkout/2.80")
     }
   }
 }
