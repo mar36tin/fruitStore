@@ -6,10 +6,6 @@ import models.Fruit
 import services.FruitService
 import forms.FormFruit._
 
-
-/**
-  * Created by mgwarada on 12/02/17.
-  */
 trait FruitStoreController extends Controller {
 
   this: Controller =>
