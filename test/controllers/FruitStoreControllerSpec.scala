@@ -34,7 +34,6 @@ class FruitStoreControllerSpec extends PlaySpec with Results {
       val controller = new TestController()
       val result: Future[Result] = controller.addFruit().apply(FakeRequest().withFormUrlEncodedBody(("apples", "5"),("oranges","6")))
       val bodyText: String = contentAsString(result)
-      
       redirectLocation(result) must contain("/checkout/2.80")
     }
   }
