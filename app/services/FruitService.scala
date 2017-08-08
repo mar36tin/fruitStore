@@ -10,3 +10,4 @@ class FruitService {
       case x :: tail => fruits.head.price + calculateTotalPayment(fruits.tail)
     }
 }
+
