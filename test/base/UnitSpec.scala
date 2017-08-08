@@ -2,5 +2,4 @@ package baseSpec
 
 import org.scalatest._
 
-abstract class UnitSpec extends WordSpec with Matchers with
-  OptionValues with Inside with Inspectors
+abstract class UnitSpec extends WordSpec with Matchers with OptionValues with Inside with Inspectors
