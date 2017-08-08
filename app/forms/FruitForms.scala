@@ -1,9 +1,5 @@
 package forms
 
-/**
-  * Created by mgwarada on 12/02/17.
-  */
-
 import play.api.data.Form
 import play.api.data.Forms._
 
