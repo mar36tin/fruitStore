@@ -1,4 +1,4 @@
-Fruit store
+Fruit shop
 ===========
 
 # Project Description
