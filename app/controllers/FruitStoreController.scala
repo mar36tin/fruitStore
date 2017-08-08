@@ -27,8 +27,8 @@ trait FruitStoreController extends Controller {
         val apples = List.fill(fruits.apples.getOrElse(0)/2 + fruits.apples.getOrElse(0)%2)(apple)
         val oranges = List.fill((fruits.oranges.getOrElse(0)/3)*2 + fruits.oranges.getOrElse(0)%3)(orange)
         val fruitList = apples ::: oranges
-
         val totalprice = fruitService.calculateTotalPayment(fruitList)
+        
         Redirect(routes.FruitStoreController.checkout(totalprice.toString))
       }
     )
